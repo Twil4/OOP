@@ -2,6 +2,7 @@
 ```
 git clone https://github.com/Twil4/OOP.git
 ```
+Hoặc vào [link](https://github.com/Twil4/OOP/releases) để tải về
 
 Cài đặt xampp tại [đây](https://www.apachefriends.org/download.html)
 
