@@ -705,6 +705,10 @@ public final class AdminForm extends javax.swing.JFrame {
 
     private void logout1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout1ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        Login lg = new Login();
+        lg.setVisible(true);
+        
     }//GEN-LAST:event_logout1ActionPerformed
 
     private void AdmintoMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdmintoMSActionPerformed
