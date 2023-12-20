@@ -435,7 +435,7 @@ public class QLMSForm extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel17.setText("Tình Trạng");
 
-        Tinhtrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Null", "Đã Trả", "Chưa Trả", " " }));
+        Tinhtrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Null", "Đã trả", "Chưa trả", " " }));
 
         jButton1.setBackground(new java.awt.Color(235, 144, 61));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -680,6 +680,9 @@ public class QLMSForm extends javax.swing.JFrame {
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
+        Login lg = new Login();
+        this.setVisible(false);
+        lg.setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
 
     private void qlmuonsachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qlmuonsachActionPerformed
@@ -971,14 +974,10 @@ public class QLMSForm extends javax.swing.JFrame {
                         Ngaymuon.setText(ngaymuon.toString());
                         MaSV.setText(masv.toString());
                         Ngayhentra.setText(ngayhentra.toString());
-                        if(ngaytra != null){
-                            Ngaytra.setText(ngaytra.toString());
-                            Tinhtrang.setSelectedIndex(1);
-                        }else{
-                            Tinhtrang.setSelectedIndex(2);
-                        }
+                        Ngaytra.setText(ngaytra.toString() + " ");
                         Soluong.setText(soluong.toString());
                         Masach.setText(masach.toString());
+                        Tinhtrang.setSelectedItem(tinhtrang.toString());
                     }
                 }
             }

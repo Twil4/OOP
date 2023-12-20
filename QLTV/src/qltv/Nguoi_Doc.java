@@ -482,6 +482,10 @@ public class Nguoi_Doc extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Nhập đầy đủ thông tin");
             return;
         }
+        if(this.ad.isValidDateFormat(Ngaysinh.getText(), "dd-mm-yyyy")) {
+            JOptionPane.showMessageDialog(null, "Nhập ngày tháng theo định dạng dd-mm-yyyy");
+            return;
+        }
         char[] CharPass = Password.getPassword();
         String Pass = new String(CharPass);
         Arrays.fill(CharPass, ' ');

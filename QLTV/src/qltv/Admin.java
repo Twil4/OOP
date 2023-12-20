@@ -12,11 +12,27 @@ package qltv;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 
 public class Admin extends Person{
 
     public Admin(String MaSV, String Password, String HoTen, String Ngaysinh, String GioiTinh, String Lop, String Khoa, int Level) {
         super(MaSV, Password, HoTen, Ngaysinh, GioiTinh, Lop, Khoa, Level);
+    }
+    
+    public boolean isValidDateFormat(String dateString, String format) {
+        try {
+            format = "dd-MM-yyyy";
+            DateFormat dateFormat = new SimpleDateFormat(format);
+            dateFormat.setLenient(false);
+            dateFormat.parse(dateString);
+            return true;
+        } catch (ParseException e) {
+            return false;
+        }
     }
     
     public ResultSet GetAllUsers(){

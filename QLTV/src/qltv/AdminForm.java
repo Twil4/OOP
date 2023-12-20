@@ -686,8 +686,16 @@ public final class AdminForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Chọn sách cần xóa");
             return;
         }
+        if(this.ad.CheckMaSach(Masach.getText()) == 0){
+            JOptionPane.showMessageDialog(null, "Mã sách không tồn tại");
+            return;
+        }
         if(this.ad.DeleteSach(Masach.getText()) == 1){
             JOptionPane.showMessageDialog(null, "Xóa thành công");
+            Masach.setText("");
+            Tensach.setText("");
+            Theloai.setSelectedIndex(0);
+            Soluong.setValue(-1);
             this.renderTableData(this.ad.GetAllSach());
             return;
         }else{
@@ -804,7 +812,7 @@ public final class AdminForm extends javax.swing.JFrame {
     
     public boolean CheckNull(){
         if(Tensach.getText().equals("")) return true;
-        if(Theloai.getSelectedItem().equals("")) return true;
+        if(Theloai.getSelectedIndex() == 0) return true;
         if(Soluong.getValue().equals("")) return true;
         return false;
     }

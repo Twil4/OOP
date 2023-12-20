@@ -27,6 +27,7 @@ public class QLSVForm
      */
     
     protected Admin ad = null;
+    String temp = "";
     
     public QLSVForm(Admin ad) {
         initComponents();
@@ -543,6 +544,9 @@ public class QLSVForm
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
+        Login lg = new Login();
+        this.setVisible(false);
+        lg.setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
 
     private void SVtoMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SVtoMSActionPerformed
@@ -579,7 +583,7 @@ public class QLSVForm
             }
 
             if (!Hoten.getText().equals("")) {
-                queryBuilder.append(" AND Hoten like N'%").append(Hoten.getText()).append("%'");
+                queryBuilder.append(" AND Hoten like '%").append(Hoten.getText()).append("%'");
             }
             
             if(!Ngaysinh.getText().equals("")){
@@ -596,7 +600,7 @@ public class QLSVForm
             }
             
             if(!"Null".equals((String) Khoa.getSelectedItem())){
-                queryBuilder.append(" AND Khoa = N'").append((String) Khoa.getSelectedItem()).append("'");
+                queryBuilder.append(" AND Khoa = '").append((String) Khoa.getSelectedItem()).append("'");
             }
 
             if(!"Null".equals((String) Level.getSelectedItem())){
@@ -626,6 +630,10 @@ public class QLSVForm
         }
         if(this.CheckMaSV()){
             JOptionPane.showMessageDialog(null, "Mã sinh viên đã tồn tại");
+            return;
+        }
+        if(!this.ad.isValidDateFormat(Ngaysinh.getText(), "dd-mm-yyy")){
+            JOptionPane.showMessageDialog(null, "Ngày sinh theo định dạng dd-mm-yyyy");
             return;
         }
         char[] CharPass = Password.getPassword();
@@ -676,6 +684,7 @@ public class QLSVForm
                         Object khoa = UserTable.getValueAt(selectedRow, 5);
                         Object level = UserTable.getValueAt(selectedRow, 6);
                         MaSV.setText(maSV.toString());
+                        temp = maSV.toString();
                         Hoten.setText(hoTen.toString());
                         Ngaysinh.setText(ngaySinh.toString());
                         if(gioiTinh.toString().equals("Nam")){
@@ -703,8 +712,8 @@ public class QLSVForm
             JOptionPane.showMessageDialog(null, "Nhập đầy đủ thông tin");
             return;
         }
-        if(!this.CheckMaSV()){
-            JOptionPane.showMessageDialog(null, "Mã sinh viên không tồn tại");
+        if(!temp.equals(MaSV.getText())){
+            JOptionPane.showMessageDialog(null, "Bạn không được thay đổi mã sinh viên");
             return;
         }
         char[] CharPass = Password.getPassword();
@@ -752,7 +761,7 @@ public class QLSVForm
             JOptionPane.showMessageDialog(null, "Mã sinh viên không tồn tại");
             return;
         }
-        if(MaSV.getText() == this.ad.MaSV){
+        if(MaSV.getText().equals(this.ad.getMaSV())){
             JOptionPane.showMessageDialog(null, "Bạn không thể tự xóa chính mình");
             return;
         }
@@ -855,7 +864,7 @@ public class QLSVForm
     }
     
     public boolean CheckNull(){
-        if("Null".equals(Level.getSelectedItem())) return true;
+        if(Level.getSelectedIndex() == 0) return true;
         if(MaSV.getText().equals("")) return true;
         if(Ngaysinh.getText().equals("")) return true;
         if(Hoten.getText().equals("")) return true;
