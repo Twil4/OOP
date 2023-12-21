@@ -766,6 +766,7 @@ public class QLSVForm
             return;
         }
         if(this.ad.DeleteUsers(MaSV.getText()) == 1){
+            this.ad.DeleteMSWithMaSV(MaSV.getText());
             JOptionPane.showMessageDialog(null, "Xóa thành công");
             this.renderTableData(this.ad.GetAllUsers());
             return;

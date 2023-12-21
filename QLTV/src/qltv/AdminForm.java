@@ -691,6 +691,7 @@ public final class AdminForm extends javax.swing.JFrame {
             return;
         }
         if(this.ad.DeleteSach(Masach.getText()) == 1){
+            this.ad.DeleteMSWithMaSach(Masach.getText());
             JOptionPane.showMessageDialog(null, "Xóa thành công");
             Masach.setText("");
             Tensach.setText("");

@@ -23,6 +23,7 @@ public class QLMSForm extends javax.swing.JFrame {
      */
     
     protected Admin ad;
+    String Book;
     
     public QLMSForm(Admin ad) {
         initComponents();
@@ -868,9 +869,11 @@ public class QLMSForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Bản ghi bạn đã chọn đã trả sách");
             return;
         }
-        if(this.ad.CheckSoLuongSach(Masach.getText(), Integer.parseInt(Soluong.getText())) == 1){
-            JOptionPane.showMessageDialog(null, "Mã sách mới đổi không đủ số lượng");
-            return;
+        if(!Book.equals(Masach.getText())){
+            if(this.ad.CheckSoLuongSach(Masach.getText(), Integer.parseInt(Soluong.getText())) == 1){
+                JOptionPane.showMessageDialog(null, "Mã sách mới đổi không đủ số lượng");
+                return;
+            }
         }
         String maSach = this.ad.GetMaSach((Integer.parseInt(Mamuonsach.getText())));
         int soLuongDangMuon = this.ad.GetSLOfMS(Integer.parseInt(Mamuonsach.getText()));
@@ -970,14 +973,19 @@ public class QLMSForm extends javax.swing.JFrame {
                         Object ngayhentra = MSTable.getValueAt(selectedRow, 5);
                         Object ngaytra = MSTable.getValueAt(selectedRow, 6);
                         Object tinhtrang = MSTable.getValueAt(selectedRow, 7);
+                        Book = masach.toString();
                         Mamuonsach.setText(mamuon.toString());
                         Ngaymuon.setText(ngaymuon.toString());
                         MaSV.setText(masv.toString());
                         Ngayhentra.setText(ngayhentra.toString());
-                        Ngaytra.setText(ngaytra.toString() + " ");
                         Soluong.setText(soluong.toString());
                         Masach.setText(masach.toString());
                         Tinhtrang.setSelectedItem(tinhtrang.toString());
+                        if(ngaytra != null){
+                            Ngaytra.setText(ngaytra.toString());
+                        }else{
+                            Ngaytra.setText("");
+                        }
                     }
                 }
             }

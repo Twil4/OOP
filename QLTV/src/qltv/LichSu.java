@@ -239,6 +239,11 @@ public class LichSu extends javax.swing.JFrame {
 
         Tinhtrang.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         Tinhtrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Đã Trả", "Chưa Trả", "Null", " " }));
+        Tinhtrang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TinhtrangActionPerformed(evt);
+            }
+        });
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel19.setText("Mã Mượn Sách ");
@@ -501,6 +506,10 @@ public class LichSu extends javax.swing.JFrame {
     private void TensachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TensachActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TensachActionPerformed
+
+    private void TinhtrangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TinhtrangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TinhtrangActionPerformed
     
     private void initializeUI(){
         ListSelectionModel selectionModel = Table.getSelectionModel();
@@ -530,6 +539,12 @@ public class LichSu extends javax.swing.JFrame {
                         Ngayhentra.setText(ngayhentra.toString());
                         Soluong.setText(soluong.toString());
                         Masach.setText(masach.toString());
+                        if(ngaytra != null){
+                            Ngaytra.setText(ngaytra.toString());
+                            Tinhtrang.setSelectedIndex(0);
+                        }else{
+                            Tinhtrang.setSelectedIndex(1);
+                        }
                     }
                 }
             }
@@ -602,7 +617,8 @@ public class LichSu extends javax.swing.JFrame {
                     String ngaytra = resultSet.getString("Ngaytra");
                     String tinhtrang = (resultSet.getInt("Tinhtrang") == 0) ? "Chưa trả" : "Đã trả";
 
-                    Object[] rowData = {mamuon, idsach, theloai, tensach, maSv, soluong, ngaymuon, ngayhentra, ngaytra, tinhtrang};
+                    Object[] rowData = {mamuon, idsach, theloai, tensach, maSv,
+                                        soluong, ngaymuon, ngayhentra, ngaytra, tinhtrang};
                     tableModel.addRow(rowData);
                 }
 

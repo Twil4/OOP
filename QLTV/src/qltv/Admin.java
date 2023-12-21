@@ -72,7 +72,7 @@ public class Admin extends Person{
     public int CheckMaSV(String MaSV){
         ConnectToSql conn = new ConnectToSql();
         try {
-            String querySql = "SELECT Gioitinh FROM Users WHERE MaSV = ?";
+            String querySql = "SELECT * FROM Users WHERE MaSV = ?";
             conn.statement = conn.connection.prepareStatement(querySql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             conn.statement.setString(1, MaSV);
             conn.result = conn.statement.executeQuery();
@@ -282,12 +282,19 @@ public class Admin extends Person{
             conn.statement = conn.connection.prepareStatement(querySql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             conn.statement.setString(1, Masach);
             conn.result = conn.statement.executeQuery();
-            int SoLuong = conn.result.getInt("Soluong");
-            if(SoLuong < Soluong){
-                return 1;
-            }else{
-                return 0;
-            }
+            if (conn.result.next()) {
+                int SoLuong = conn.result.getInt("Soluong");
+                System.out.println(SoLuong);
+                System.out.println(Soluong);
+                if (SoLuong < Soluong) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+        } else {
+            // Không tìm thấy bản ghi với Masach tương ứng
+            return 0;
+        }
         } catch (Exception e) {
             return 0;
         }
@@ -556,6 +563,40 @@ public class Admin extends Person{
             String querySql = "DELETE FROM Muonsach WHERE Mamuonsach = ?";
             conn.statement = conn.connection.prepareStatement(querySql);
             conn.statement.setInt(1, Mamuonsach);
+            int row = conn.statement.executeUpdate();
+            if(row > 0){
+                return 1;
+            }else{
+                return 0;
+            }
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+    
+    public int DeleteMSWithMaSach(String Masach){
+        ConnectToSql conn = new ConnectToSql();
+        try {
+            String querySql = "DELETE FROM Muonsach WHERE Masach = ?";
+            conn.statement = conn.connection.prepareStatement(querySql);
+            conn.statement.setString(1, Masach);
+            int row = conn.statement.executeUpdate();
+            if(row > 0){
+                return 1;
+            }else{
+                return 0;
+            }
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+    
+    public int DeleteMSWithMaSV(String MaSv){
+        ConnectToSql conn = new ConnectToSql();
+        try {
+            String querySql = "DELETE FROM Muonsach WHERE MaSV = ?";
+            conn.statement = conn.connection.prepareStatement(querySql);
+            conn.statement.setString(1, MaSv);
             int row = conn.statement.executeUpdate();
             if(row > 0){
                 return 1;
