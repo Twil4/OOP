@@ -203,10 +203,12 @@ public class QLMSForm extends javax.swing.JFrame {
         jLabel1.setText("Thông tin sách");
 
         SachDaMuon.setBackground(new java.awt.Color(250, 244, 240));
-        SachDaMuon.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(102, 102, 102), new java.awt.Color(102, 102, 102)));
+        SachDaMuon.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("Mã Sách");
+
+        MasachSearch.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Thể Loại");
@@ -227,14 +229,20 @@ public class QLMSForm extends javax.swing.JFrame {
         TheloaiSearch.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TheloaiSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Null", "Đại cương", "Hacking", "Chuyên Ngành", "Sách tham khảo", "truyện", "Sách công nghệ_KHKT", "Sách khoa học xã hội" }));
 
+        Tong.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("SL Đã Mượn");
+
+        SLMuon.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Còn Lại");
 
+        ConlaiSearch.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         SearchSach.setBackground(new java.awt.Color(235, 144, 61));
-        SearchSach.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SearchSach.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         SearchSach.setText("Tìm Kiếm ");
         SearchSach.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,7 +287,7 @@ public class QLMSForm extends javax.swing.JFrame {
                             .addComponent(jLabel2)))
                     .addGroup(SachDaMuonLayout.createSequentialGroup()
                         .addGap(95, 95, 95)
-                        .addComponent(SearchSach, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(SearchSach)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SachDaMuonLayout.setVerticalGroup(
@@ -313,7 +321,7 @@ public class QLMSForm extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SearchSach)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
@@ -391,7 +399,7 @@ public class QLMSForm extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addGap(33, 33, 33)
                 .addComponent(AddMS)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(UpdateMS)
                 .addGap(47, 47, 47)
                 .addComponent(DeleteMS)
@@ -414,6 +422,11 @@ public class QLMSForm extends javax.swing.JFrame {
         jLabel7.setText("Mã Sách");
 
         Masach.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Masach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasachActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel8.setText("Số Lượng Mượn");
@@ -436,6 +449,7 @@ public class QLMSForm extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel17.setText("Tình Trạng");
 
+        Tinhtrang.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Tinhtrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Null", "Đã trả", "Chưa trả", " " }));
 
         jButton1.setBackground(new java.awt.Color(235, 144, 61));
@@ -460,6 +474,13 @@ public class QLMSForm extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel19.setText("Mã Mượn Sách ");
+
+        Mamuonsach.setBackground(new java.awt.Color(204, 204, 204));
+        Mamuonsach.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Mamuonsach.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        Ngaytra.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Ngaytra.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -491,23 +512,20 @@ public class QLMSForm extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel17))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Tinhtrang, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(Ngayhentra))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(Trasach)
-                                        .addGap(79, 79, 79))))))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel17))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(Tinhtrang, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(Trasach, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(Ngaytra, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -550,14 +568,14 @@ public class QLMSForm extends javax.swing.JFrame {
                     .addComponent(Masach, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17)
                     .addComponent(Tinhtrang, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Trasach, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Trasach, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
-        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {MaSV, Masach});
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {MaSV, Mamuonsach, Masach, Ngaytra});
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Ngayhentra, Ngaymuon, Soluong});
 
@@ -597,9 +615,9 @@ public class QLMSForm extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SachDaMuon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SachDaMuon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -861,6 +879,10 @@ public class QLMSForm extends javax.swing.JFrame {
 
     private void UpdateMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateMSActionPerformed
         // TODO add your handling code here:
+        if (this.CheckNull()){
+            JOptionPane.showMessageDialog(null, "Nhập đầy đủ thông tin");
+            return;
+        }
         if(Mamuonsach.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Hãy chọn bạn đọc trả sách trước");
             return;
@@ -879,6 +901,10 @@ public class QLMSForm extends javax.swing.JFrame {
         int soLuongDangMuon = this.ad.GetSLOfMS(Integer.parseInt(Mamuonsach.getText()));
         int soLuongSachCon = this.ad.GetSoLuongSachCon(maSach);
         soLuongSachCon = soLuongSachCon + soLuongDangMuon;
+        if(soLuongSachCon < Integer.parseInt(Soluong.getText())){
+            JOptionPane.showMessageDialog(null, "Số lượng sách còn tại không đủ");
+            return;
+        }
         if(this.ad.UpdateSLSach(maSach, soLuongSachCon) != 1){
             return;
         }
@@ -954,6 +980,10 @@ public class QLMSForm extends javax.swing.JFrame {
         TrangCaNhan tcn = new TrangCaNhan(this.ad);
         tcn.setVisible(true);
     }//GEN-LAST:event_MSToTCNActionPerformed
+
+    private void MasachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasachActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MasachActionPerformed
     
     
     private void initializeUI(){
@@ -1067,6 +1097,7 @@ public class QLMSForm extends javax.swing.JFrame {
     }
     
     public boolean CheckNull(){
+        if(Soluong.getText().equals("")) return true;
         if(MaSV.getText().equals("")) return true;
         if(Ngayhentra.getText().equals("")) return true;
         if(Integer.parseInt(Soluong.getText()) == 0) return true;

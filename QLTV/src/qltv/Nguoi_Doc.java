@@ -254,7 +254,6 @@ public class Nguoi_Doc extends javax.swing.JFrame {
         Khoa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "An Toàn Thông Tin", "Công Nghệ Thông Tin", "Điện Tử Viễn Thông" }));
 
         Ngaysinh.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Ngaysinh.setText("dd/mm/yyyy");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("PassWord");

@@ -66,12 +66,10 @@ public class Muon_sach extends javax.swing.JFrame {
         Ngaymuon = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         Ngayhentra = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        Ngaytra = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        Mamuonsach = new javax.swing.JTextField();
         Muon = new javax.swing.JButton();
         Soluong = new javax.swing.JTextField();
+        Mamuonsach = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         SachDaMuon = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -246,13 +244,8 @@ public class Muon_sach extends javax.swing.JFrame {
 
         Ngayhentra.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel16.setText("Ngày Trả");
-
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel19.setText("Mã Mượn Sách ");
-
-        Mamuonsach.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         Muon.setBackground(new java.awt.Color(70, 130, 180));
         Muon.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
@@ -262,6 +255,11 @@ public class Muon_sach extends javax.swing.JFrame {
                 MuonActionPerformed(evt);
             }
         });
+
+        Soluong.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        Mamuonsach.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Mamuonsach.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -275,38 +273,36 @@ public class Muon_sach extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel19)
-                        .addGap(18, 18, 18)
-                        .addComponent(Mamuonsach, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Masach, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Hoten, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MaSV, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Masach, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Hoten, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(MaSV, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Mamuonsach, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel9)
-                        .addGap(35, 35, 35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Ngaymuon, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Ngayhentra)
-                            .addComponent(Ngaytra)))
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(Ngayhentra, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Soluong)))
-                .addGap(92, 92, 92))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Soluong, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
+                .addGap(80, 80, 80))
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(307, 307, 307)
+                .addGap(319, 319, 319)
                 .addComponent(Muon)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel6Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Ngayhentra, Ngaymuon, Soluong});
+
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -314,31 +310,34 @@ public class Muon_sach extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MaSV, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(Hoten))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(Ngaymuon, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19)
                             .addComponent(Mamuonsach, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
-                        .addComponent(Ngayhentra, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel15)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(MaSV, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35)
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(Ngayhentra, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60)))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(Ngaytra, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(Hoten))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(Masach, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
                     .addComponent(Soluong, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(2, 2, 2)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(Masach, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
                 .addComponent(Muon)
-                .addGap(18, 18, 18))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -365,6 +364,8 @@ public class Muon_sach extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("Mã Sách");
 
+        MasachSearch.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Thể Loại");
 
@@ -384,11 +385,17 @@ public class Muon_sach extends javax.swing.JFrame {
         TheloaiSearch.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TheloaiSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Null", "Đại cương", "Hacking", "Chuyên Ngành", "Sách tham khảo", "truyện", "Sách công nghệ_KHKT", "Sách khoa học xã hội" }));
 
+        Tong.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("SL Đã Mượn");
 
+        SLMuon.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Còn Lại");
+
+        ConlaiSearch.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jButton6.setBackground(new java.awt.Color(70, 130, 180));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -564,7 +571,7 @@ public class Muon_sach extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1252, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1254, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -640,7 +647,7 @@ public class Muon_sach extends javax.swing.JFrame {
     
     private void MuonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MuonActionPerformed
         // TODO add your handling code here:\
-        if(this.CheckNull()){
+        if(this.CheckNull()== false){
             JOptionPane.showMessageDialog(null, "Nhập đầy đủ thông tin");
             return;
         }
@@ -789,6 +796,7 @@ public class Muon_sach extends javax.swing.JFrame {
     }
     
     public boolean CheckNull(){
+        if(Soluong.getText().equals("")) return true;
         if(MaSV.getText().equals("")) return true;
         if(Ngayhentra.getText().equals("")) return true;
         if(Integer.parseInt(Soluong.getText()) == 0) return true;
@@ -806,13 +814,12 @@ public class Muon_sach extends javax.swing.JFrame {
     private javax.swing.JTextField Hoten;
     private javax.swing.JButton Logout;
     private javax.swing.JTextField MaSV;
-    private javax.swing.JTextField Mamuonsach;
+    private javax.swing.JLabel Mamuonsach;
     private javax.swing.JTextField Masach;
     private javax.swing.JTextField MasachSearch;
     private javax.swing.JButton Muon;
     private javax.swing.JTextField Ngayhentra;
     private javax.swing.JTextField Ngaymuon;
-    private javax.swing.JTextField Ngaytra;
     private javax.swing.JSpinner SLMuon;
     private javax.swing.JPanel SachDaMuon;
     private javax.swing.JTextField Soluong;
@@ -831,7 +838,6 @@ public class Muon_sach extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;

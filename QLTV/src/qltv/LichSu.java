@@ -228,8 +228,13 @@ public class LichSu extends javax.swing.JFrame {
         jLabel15.setText("Ngày Hẹn Trả");
 
         Ngayhentra.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        Ngayhentra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NgayhentraActionPerformed(evt);
+            }
+        });
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel16.setText("Ngày Trả");
 
         Ngaytra.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -294,8 +299,7 @@ public class LichSu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Ngaytra, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Ngayhentra, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Ngaymuon, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Ngayhentra, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(126, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -321,7 +325,10 @@ public class LichSu extends javax.swing.JFrame {
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(Soluong)
                                     .addComponent(Tinhtrang, 0, 110, Short.MAX_VALUE)
-                                    .addComponent(Theloai)))
+                                    .addComponent(Theloai))
+                                .addGap(161, 161, 161)
+                                .addComponent(Ngaymuon, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Xem, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,7 +346,7 @@ public class LichSu extends javax.swing.JFrame {
                             .addComponent(Mamuonsach, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Theloai, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Theloai, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(73, 73, 73))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGap(80, 80, 80)
@@ -510,6 +517,10 @@ public class LichSu extends javax.swing.JFrame {
     private void TinhtrangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TinhtrangActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TinhtrangActionPerformed
+
+    private void NgayhentraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NgayhentraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NgayhentraActionPerformed
     
     private void initializeUI(){
         ListSelectionModel selectionModel = Table.getSelectionModel();

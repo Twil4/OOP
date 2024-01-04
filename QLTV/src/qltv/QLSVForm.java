@@ -111,6 +111,11 @@ public class QLSVForm
         TrangCaNhan.setBackground(new java.awt.Color(204, 204, 204));
         TrangCaNhan.setFont(new java.awt.Font("Dialog", 0, 20)); // NOI18N
         TrangCaNhan.setText("Trang Cá Nhân");
+        TrangCaNhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TrangCaNhanActionPerformed(evt);
+            }
+        });
 
         logout.setBackground(new java.awt.Color(204, 204, 204));
         logout.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -312,12 +317,14 @@ public class QLSVForm
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("PassWord");
 
+        Password.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordActionPerformed(evt);
             }
         });
 
+        Level.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Level.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Null", "0", "1" }));
 
         jLabel12.setBackground(new java.awt.Color(51, 51, 51));
@@ -789,6 +796,13 @@ public class QLSVForm
         Khoa.setSelectedIndex(0);
         this.renderTableData(this.ad.GetAllUsers());
     }//GEN-LAST:event_ExitUserActionPerformed
+
+    private void TrangCaNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrangCaNhanActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        TrangCaNhan tcn = new TrangCaNhan(this.ad);
+        tcn.setVisible(true);
+    }//GEN-LAST:event_TrangCaNhanActionPerformed
 
     /**
      * @param args the command line arguments

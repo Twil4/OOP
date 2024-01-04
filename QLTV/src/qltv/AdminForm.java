@@ -812,6 +812,7 @@ public final class AdminForm extends javax.swing.JFrame {
     }
     
     public boolean CheckNull(){
+        if (Masach.getText().equals("")) return true;
         if(Tensach.getText().equals("")) return true;
         if(Theloai.getSelectedIndex() == 0) return true;
         if(Soluong.getValue().equals("")) return true;

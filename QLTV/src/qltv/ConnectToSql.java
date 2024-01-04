@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class ConnectToSql {
     
-    protected String url = "jdbc:mysql://localhost:3306/QLTVS?encrypt=false&trustServerCertificate=true&useSSL=false";
+    protected String url = "jdbc:mysql://localhost:3306/QLTV?encrypt=false&trustServerCertificate=true&useSSL=false";
     protected String username = "root";
     protected String password = "";
     protected Connection connection;
